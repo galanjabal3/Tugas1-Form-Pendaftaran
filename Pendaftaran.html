@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<style>
+    body{
+    background-image:url('https://cdn.hipwallpaper.com/i/5/65/i0IBna.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    }
+  </style>
+<body>
+    <nav class="navbar navbar-light bg-dark navbar fixed-top">
+        <a class="navbar-brand text-white">Form</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+    <div class="d-flex justify-content-center mt-5 text-white">
+        <div class="card bg-transparent border-dark" style="width: 35rem;">
+          <div class="card-body ">
+             <h2><center>Form Pendaftaran</center></h2><hr> 
+            <div id="app">
+                <h3>Nama Lengkap:</h3>
+                <input type="text" v-model="texty" placeholder="Nama Lengkap"> 
+                <h3>TTL:</h3>
+                <input type="date" v-model="text" placeholder="Ttl">
+                <h3>Gender:</h3>
+                <input type="radio" v-model="lesson" value="Male">Male
+                <input type="radio" v-model="lesson" value="Female">Female
+                <input type="radio" v-model="lesson" value="Netral">Netral
+                <h3>Agama:</h3>
+                <select v-model="selected">
+                    <option disabled value="">Pilih</option>
+                    <option>Islam</option>
+                    <option>Non Islam</option>
+                </select>
+                <h3>Alamat:</h3>
+                <p style="white-space: pre-line;"></p>
+                <textarea v-model="message" placeholder="add multiple lines"></textarea>
+                <h3>No.Hp:</h3>        
+                <input type="text" v-model="num" placeholder="No.Hp">
+                <h3>Hobi:</h3>
+                <input type="checkbox" v-model="hoby" value="Main Game">Main Game
+                <input type="checkbox" v-model="hoby" value="Tidur">Tidur
+                <input type="checkbox" v-model="hoby" value="Voli">Voli
+                <input type="checkbox" v-model="hoby" value="Shooping">Shooping
+                <input type="checkbox" v-model="hoby" value="Deketin Cewek">Deketin Cewek
+                <input type="checkbox" v-model="hoby" value="Renang">Renang<hr>
+             <center>        
+            <h3>Hasil Form</h3>           
+            <table border="3" >
+                <tr >
+                    <th>Nama Lengkap</th>
+                    <th>TTL</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Alamat</th>
+                    <th>No.Hp</th>
+                    <th>Hoby</th>
+                </tr>
+                <tr>
+                    <td>{{ texty }}</td>
+                    <td>{{ text }}</td>
+                    <td>{{ lesson }}</td>
+                    <td>{{ selected }}</td>
+                    <td>{{ message }}</td>
+                    <td>{{ num }}</td>
+                    <td>{{ hoby }}</td>
+                </tr>
+            </table>
+             </center>
+            </div>   
+        </div>
+    </div>
+  </div>   
+
+
+    <script>
+      var va = new Vue({
+          el : '#app' ,
+          data: {
+            hoby : []
+          },
+      });
+
+      var va = new Vue({
+          el : '#app' ,
+          data: {
+              lesson : []
+          },
+      });
+    </script>
+</body>
+</html>
